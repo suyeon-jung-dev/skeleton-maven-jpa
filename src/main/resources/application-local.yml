@@ -1,0 +1,53 @@
+# local
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:33013/skeleton
+    username: skeleton
+    password: skeleton
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath*:db/schema.sql
+      data-locations: classpath*:db/data.sql
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  docker:
+    compose:
+      file: "docker-compose.yml"
+      lifecycle-management: start_and_stop
+      profiles:
+        active: "local"
+      enabled: true
+logging:
+  level:
+    org:
+      springframework: INFO
+
+# Actuator
+management:
+  endpoints:
+    enabled-by-default: false
+    jmx:
+      exposure:
+        include: "*" # careful in production
+#        exclude: "info,health,metrics,startup"
+    web:
+      exposure:
+        include: "*" # careful in production
+  #    jmx:
+#      exposure:
+#        exclude: "*"
+#        include: "info,health,metrics,startup"
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    metrics:
+      enabled: true
+    startup:
+      enabled: true

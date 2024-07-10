@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: restapi-maven-jpa
+  profiles:
+    active: '@spring.profiles.active@'

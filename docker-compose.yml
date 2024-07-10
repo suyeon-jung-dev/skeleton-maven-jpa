@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:8.4
+    ports:
+      - "33013:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=skeleton
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_USER=skeleton
+      - MYSQL_PASSWORD=skeleton
+      - MYSQL_DATABASE=skeleton
+      - TZ=Asia/Seoul
+    volumes:
+      - "./conf.d:/etc/mysql/conf.d:ro"
+    profiles:
+      - local
