@@ -3,6 +3,6 @@ server:
 
 spring:
   application:
-    name: restapi-maven-jpa
+    name: skeleton-maven-jpa
   profiles:
     active: '@spring.profiles.active@'
