@@ -4,9 +4,9 @@
 
 
 ## Spec
-- java 17
-- spring boot 3.3.1
-- mysql 8.4
+- java `17`
+- spring boot `3.3.1`
+- mysql `8.4`
 - Used `docker-compose support`. A MySQL server in a local environment is configured to match the application lifecycle in a container.
   - Docker and Docker Compose must be pre-installed locally. [Installing Docker Desktop once is sufficient.](https://www.docker.com/products/docker-desktop/)
   > If it's the first time running the `mysql:8.4` image, the image will be downloaded when the application starts.
